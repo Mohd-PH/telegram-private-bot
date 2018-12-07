@@ -4,7 +4,8 @@ const package = require("../package.json");
 settings.init({
   appName:       package.name,
   publisherName: package.author, //optional
-  reverseDNS:    package.reverseDNS //required for macOS
+  reverseDNS:    package.reverseDNS, //required for macOS
+  enableReloading: false
 });
 
 
@@ -16,6 +17,7 @@ const addBot = function (botName, botToken, userChatId){
     userChatId
   });
   settings.setValue('bots', botsList);
+  console.log(`Added the new bot ${botName}`)
   return botsList;
 }
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander');
 const package = require('../package.json');
-const store = require("./storeManager")
+const addBot = require('./commands/addBot');
 
 program
   .version(package.version)
@@ -12,7 +12,5 @@ program
 
 
 if(program.addbot){
-  store.addBot('Testing', '9042389042380483290', 'lkjfiowrfoi4309ru24');
+  addBot();
 }
-
-console.log('ffdsfsd')
