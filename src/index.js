@@ -5,9 +5,8 @@ const addBot = require('./commands/addBot')
 
 program
   .version(packageData.version)
-  .option('-s, --setup', 'Testing')
   .option('-m, --message [message]', 'The message to send', undefined)
-  .option('-a, --addbot', 'Add a new Bot')
+  .option('-a, --addbot', 'Add a bot or replace existing bot')
   .parse(process.argv)
 
 if (program.addbot) {

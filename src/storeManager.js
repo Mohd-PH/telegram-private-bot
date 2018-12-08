@@ -9,15 +9,14 @@ settings.init({
 })
 
 const addBot = function (botName, botToken, userChatId) {
-  var botsList = settings.value('bots', [])
-  botsList.push({
+  var bot = {
     name: botName,
     token: botToken,
     userChatId
-  })
-  settings.setValue('bots', botsList)
-  console.log(`Added the new bot ${botName}`)
-  return botsList
+  }
+  settings.setValue('bot', bot)
+  console.log(`Added the bot ${bot.name}`)
+  return bot
 }
 
 module.exports = {
