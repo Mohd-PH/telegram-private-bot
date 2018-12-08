@@ -2,6 +2,7 @@
 const program = require('commander')
 const packageData = require('../package.json')
 const addBot = require('./commands/addBot')
+const sendMessage = require('./commands/sendMessage')
 
 program
   .version(packageData.version)
@@ -11,4 +12,6 @@ program
 
 if (program.addbot) {
   addBot()
+} else if (program.message) {
+  sendMessage(program.message)
 }
